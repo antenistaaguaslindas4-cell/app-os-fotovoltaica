@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#111827">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+  <title>OS Fotovoltaica</title>
+</head>
+<body>
+<header><h1>OS Fotovoltaica</h1><span id="status">Nova OS</span></header>
+<main>
+<section class="card">
+  <h2>Dados da ordem</h2>
+  <input id="os" placeholder="Nº da OS">
+  <input id="cliente" placeholder="Nome do cliente">
+  <input id="endereco" placeholder="Endereço">
+  <div class="grid"><input id="data" type="date"><input id="tecnico" placeholder="Técnico"></div>
+  <textarea id="servico" placeholder="Descrição do serviço"></textarea>
+</section>
+
+<section class="card">
+  <h2>Checklist de inspeção</h2>
+  <label><input type="checkbox" data-check="inspecao"> Inspeção visual das telhas</label>
+  <label><input type="checkbox" data-check="estrutura"> Estrutura e fixações verificadas</label>
+  <label><input type="checkbox" data-check="cabos"> Cabos e conectores verificados</label>
+  <label><input type="checkbox" data-check="inversor"> Inversor/microinversores verificados</label>
+  <label><input type="checkbox" data-check="teste"> Teste do sistema realizado</label>
+  <label><input type="checkbox" data-check="disjuntor"> Disjuntor armado</label>
+</section>
+
+<section class="card">
+  <h2>Materiais utilizados</h2>
+  <div class="material-add">
+    <select id="material">
+      <option>Parafuso</option><option>Copex 3/4"</option><option>Copex 1/2"</option>
+      <option>Disjuntor 20 A</option><option>Disjuntor 32 A</option><option>Disjuntor 40 A</option>
+      <option>Disjuntor NEMA</option><option>Disjuntor DIN</option>
+      <option>Cabo solar</option><option>Conector MC4</option><option>Trilho fotovoltaico</option>
+      <option>Microinversor</option><option>Inversor</option><option>Outro</option>
+    </select>
+    <input id="qtd" type="number" min="1" value="1" placeholder="Qtd.">
+    <button id="addMaterial">Adicionar</button>
+  </div>
+  <ul id="materials"></ul>
+</section>
+
+<section class="card">
+  <h2>Registro fotográfico</h2>
+  <input id="photos" type="file" accept="image/*" multiple capture="environment">
+  <div id="gallery"></div>
+</section>
+
+<section class="card">
+  <h2>Assinatura do cliente</h2>
+  <canvas id="signature" width="700" height="260"></canvas>
+  <div class="row"><button id="clearSig" class="secondary">Limpar</button></div>
+</section>
+
+<section class="card">
+  <h2>Observações</h2>
+  <textarea id="obs" placeholder="Observações, pendências ou recomendações"></textarea>
+</section>
+
+<section class="actions">
+  <button id="save">Salvar OS</button>
+  <button id="share">Compartilhar via WhatsApp</button>
+  <button id="print" class="secondary">Imprimir / PDF</button>
+</section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
