@@ -1,22 +1,24 @@
-# OS Fotovoltaica
+# Aplicativo OS - Start Energia
 
-Aplicativo web/PWA para emissão de Ordem de Serviço fotovoltaica.
+Projeto Android nativo com:
+- Ordem de serviço elétrica/fotovoltaica
+- Checklist de inspeção visual, telhado, teste do sistema e disjuntor
+- Catálogo de materiais
+- Registro fotográfico
+- Assinatura digital
+- Geração de PDF
+- Compartilhamento do PDF
+- Compartilhamento de resumo via WhatsApp
+- Salvamento local da última OS
+- GitHub Actions configurado para gerar APK e publicar em Artifacts
 
-Inclui:
-- dados do cliente e técnico;
-- checklist de inspeção visual das telhas;
-- estrutura, cabos, inversor/microinversores;
-- teste do sistema e disjuntor armado;
-- lista pré-cadastrada de materiais elétricos/fotovoltaicos;
-- registro fotográfico;
-- assinatura digital do cliente;
-- observações;
-- salvar no aparelho;
-- compartilhar o resumo pelo WhatsApp;
-- impressão/geração de PDF pelo navegador.
+## Como gerar o APK no GitHub pelo celular
+1. Envie todos os arquivos deste ZIP para o repositório.
+2. Abra a aba Actions.
+3. Procure o fluxo **Gerar APK**.
+4. Toque nele e use **Run workflow** (ou faça um commit na branch principal).
+5. Quando terminar, abra a execução.
+6. Em **Artifacts**, toque em **Start-Energia-APK** e baixe o ZIP.
+7. Dentro do ZIP estará `app-debug.apk`.
 
-## Como testar
-Abra `index.html` em um navegador ou publique o repositório no GitHub Pages.
-
-## Próxima etapa
-Este pacote está preparado como aplicativo web/PWA. Para gerar um APK Android, o projeto pode ser empacotado com Capacitor ou convertido em um projeto Android.
+O workflow usa `actions/upload-artifact@v4`, conforme a documentação do GitHub.
